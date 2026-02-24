@@ -1,15 +1,37 @@
-# Minesweeper-project
-**Intoduction to programming Practicum Course - final project.**
+# 🎮 Minesweeper Project Overview
 
-При започването на играта потребителят трябва да може да избере на каква размерност да играе (3 <= N <= 10). След това трябва да избере колко мини да бъдат "скрити", броят трябва да е в интервала [1 : 3N]. 
-Ако някои от стойностите не са въведат правилно от потребителя, то трябва да се изведе подходящо съобщение и да бъде "приканен" да въведе отново.
-В конзолата трябва да се изпълняват команди от вида:
+### Intoduction to Programming Practicum Course - Final project
 
- [command] [x coordinate] [y coordinate] // [действие] [ред] [колона]
-Където [command] е open, mark или unmark, а след него стоят координатите на квадратчето.
+#### This is a console-based implementation of the classic Minesweeper game. At the start of the game, the user configures the board size and the difficulty level by specifying the number of hidden mines.
+___
 
->open - отваря квадратчето. Ако там седи мина - край на играта!
+#### Configuration
 
->mark - маркира квадратчето като "мина". Ако всички мини са маркирани и всички други квадратчета са отворени, играта приключва с успех!
+Upon launching, the game prompts the user for two inputs:
+>Grid Dimension ($N$): The size of the square board ($3 \le N \le 10$).
 
->unmark - отмаркира квадрачето като "мина". Ако квадратчето не е било маркирано, то се извежда подходящо съобщение за грешка.
+>Mines Count: The number of hidden mines, which must be within the range $[1 : 3N]$.
+
+⚠️ If the user enters invalid values, the program will display an error message and prompt the user to re-enter the data until valid inputs are provided.
+___
+#### How to play?
+
+The game is controlled via console commands using the following syntax:
+```
+[command] [x_coordinate] [y_coordinate]
+```
+___
+#### SupportedCommands
+
+| Command | Action | Description |
+| :--- | :--- | :--- |
+| **open** | Open Cell | Reveals the content of the cell. If it contains a mine—**Game Over!** |
+| **mark** | Flag Mine | Marks a cell as a suspected mine. |
+| **unmark** | Remove Flag | Removes a mark from a cell. If the cell wasn't marked, an error message is shown. |
+
+#### Winning Conditions
+
+The player wins the game when:
+> All mines have been correctly marked.
+
+> All remaining safe cells have been opened.
